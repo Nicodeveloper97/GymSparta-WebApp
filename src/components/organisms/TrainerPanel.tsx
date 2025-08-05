@@ -4,8 +4,8 @@ import type React from "react"
 
 import { useState } from "react"
 import Typography from "@/components/atoms/Typography"
-import Input from "../atoms/input"
-import Button from "../atoms/button"
+import Input from "@/components/atoms/input"
+import Button from "@/components/atoms/button"
 
 interface Exercise {
   name: string
@@ -19,6 +19,16 @@ interface DayRoutine {
   exercises: Exercise[]
 }
 
+interface SavedRoutine {
+  id: number
+  clientDocument: string
+  clientName: string
+  visibilityDays: number
+  expiryDate: string
+  routines: DayRoutine[]
+  createdAt: string
+}
+
 interface TrainerPanelProps {
   onClose: () => void
 }
@@ -30,8 +40,8 @@ export default function TrainerPanel({ onClose }: TrainerPanelProps) {
   const [routines, setRoutines] = useState<DayRoutine[]>([
     { dayName: "Día 1", exercises: [{ name: "", sets: "", reps: "", notes: "" }] },
   ])
-  const [savedRoutines, setSavedRoutines] = useState<any[]>([])
-  const [editingRoutine, setEditingRoutine] = useState<any>(null)
+  const [savedRoutines, setSavedRoutines] = useState<SavedRoutine[]>([])
+  const [editingRoutine, setEditingRoutine] = useState<SavedRoutine | null>(null)
 
   const addDay = () => {
     setRoutines([
@@ -114,7 +124,7 @@ export default function TrainerPanel({ onClose }: TrainerPanelProps) {
     alert(editingRoutine ? "¡Rutina actualizada exitosamente!" : "¡Rutina guardada exitosamente!")
   }
 
-  const editRoutine = (routine: any) => {
+  const editRoutine = (routine: SavedRoutine) => {
     setEditingRoutine(routine)
     setClientDocument(routine.clientDocument)
     setClientName(routine.clientName)

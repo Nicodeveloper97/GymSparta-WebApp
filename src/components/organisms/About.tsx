@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react"
 import Typography from "@/components/atoms/Typography"
+import Image from "next/image"
 
 export default function About() {
   const sectionRef = useRef<HTMLElement>(null)
@@ -111,25 +112,31 @@ export default function About() {
         {/* Gallery */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
           <div className="relative h-80 bg-neutral-800 rounded-lg overflow-hidden group">
-            <img
+            <Image
               src="/images/javi-training.jpg"
               alt="Ambiente de entrenamiento"
+              width={400}
+              height={320}
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-300" />
           </div>
           <div className="relative h-80 bg-neutral-800 rounded-lg overflow-hidden group">
-            <img
+            <Image
               src="/images/belen-fitness.jpg"
               alt="Área de entrenamiento funcional"
+              width={400}
+              height={320}
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-300" />
           </div>
           <div className="relative h-80 bg-neutral-800 rounded-lg overflow-hidden group">
-            <img
+            <Image
               src="/images/juli-training.jpg"
               alt="Zona de entrenamiento de fuerza"
+              width={400}
+              height={320}
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-300" />
@@ -140,7 +147,7 @@ export default function About() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 py-16 border-t border-neutral-800">
           <div className="text-center">
             <Typography variant="h2" className="mb-2 text-white">
-              150+
+              500+
             </Typography>
             <Typography variant="caption" className="text-neutral-500 uppercase tracking-wider">
               Miembros Activos
@@ -148,7 +155,7 @@ export default function About() {
           </div>
           <div className="text-center">
             <Typography variant="h2" className="mb-2 text-white">
-              3
+              5
             </Typography>
             <Typography variant="caption" className="text-neutral-500 uppercase tracking-wider">
               Años de Experiencia
@@ -156,7 +163,7 @@ export default function About() {
           </div>
           <div className="text-center">
             <Typography variant="h2" className="mb-2 text-white">
-              3
+              15
             </Typography>
             <Typography variant="caption" className="text-neutral-500 uppercase tracking-wider">
               Entrenadores Expertos
