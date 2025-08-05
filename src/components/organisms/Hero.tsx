@@ -2,10 +2,10 @@
 
 import { useEffect, useRef } from "react"
 import Typography from "@/components/atoms/Typography"
-import Button from "../atoms/button"
+import Button from "@/components/atoms/button"
 
 export default function Hero() {
-  const heroRef = useRef<HTMLElement>(null)
+  const heroRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const handleScroll = () => {
