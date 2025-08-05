@@ -8,7 +8,29 @@ import Input from "@/components/atoms/input"
 import Button from "@/components/atoms/button"
 import RoutineCard from "@/components/molecules/RoutineCard"
 
-const mockRoutine = {
+interface Exercise {
+  name: string
+  sets: number
+  reps: string
+  notes?: string
+}
+
+interface RoutineDay {
+  day: string
+  exercises: Exercise[]
+}
+
+interface RoutineData {
+  name: string
+  expiryDate: string
+  routine: RoutineDay[]
+}
+
+interface MockRoutineType {
+  [key: string]: RoutineData
+}
+
+const mockRoutine: MockRoutineType = {
   "38803625": {
     name: "Juan Pérez",
     expiryDate: "2025-12-31",
@@ -72,7 +94,7 @@ const mockRoutine = {
 
 export default function RoutineSearch() {
   const [document, setDocument] = useState("")
-  const [routine, setRoutine] = useState<any>(null)
+  const [routine, setRoutine] = useState<RoutineData | null>(null)
   const [selectedDay, setSelectedDay] = useState<number | null>(null)
   const [error, setError] = useState("")
 
@@ -81,8 +103,8 @@ export default function RoutineSearch() {
     setError("")
     setSelectedDay(null)
 
-    if (mockRoutine[document as keyof typeof mockRoutine]) {
-      const foundRoutine = mockRoutine[document as keyof typeof mockRoutine]
+    if (mockRoutine[document]) {
+      const foundRoutine = mockRoutine[document]
 
       const expiryDate = new Date(foundRoutine.expiryDate + "T23:59:59")
       const today = new Date()
@@ -158,7 +180,7 @@ export default function RoutineSearch() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
-              {routine.routine.map((day: any, index: number) => (
+              {routine.routine.map((day: RoutineDay, index: number) => (
                 <button
                   key={index}
                   onClick={() => handleDaySelect(index)}
