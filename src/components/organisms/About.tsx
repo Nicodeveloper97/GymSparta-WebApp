@@ -147,7 +147,7 @@ export default function About() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 py-16 border-t border-neutral-800">
           <div className="text-center">
             <Typography variant="h2" className="mb-2 text-white">
-              500+
+              150+
             </Typography>
             <Typography variant="caption" className="text-neutral-500 uppercase tracking-wider">
               Miembros Activos
@@ -155,7 +155,7 @@ export default function About() {
           </div>
           <div className="text-center">
             <Typography variant="h2" className="mb-2 text-white">
-              5
+              3
             </Typography>
             <Typography variant="caption" className="text-neutral-500 uppercase tracking-wider">
               Años de Experiencia
@@ -163,7 +163,7 @@ export default function About() {
           </div>
           <div className="text-center">
             <Typography variant="h2" className="mb-2 text-white">
-              15
+              3
             </Typography>
             <Typography variant="caption" className="text-neutral-500 uppercase tracking-wider">
               Entrenadores Expertos
