@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import Button from "../atoms/button"
+import Button from "@/components/atoms/button"
 import Typography from "@/components/atoms/Typography"
 
 interface HeaderProps {
@@ -55,6 +55,12 @@ export default function Header({ onTrainerPanelToggle }: HeaderProps) {
               className="text-sm text-neutral-400 hover:text-white transition-colors"
             >
               Entrenamientos
+            </button>
+            <button
+              onClick={() => scrollToSection("calories")}
+              className="text-sm text-neutral-400 hover:text-white transition-colors"
+            >
+              Calorías
             </button>
             <button
               onClick={() => scrollToSection("contact")}

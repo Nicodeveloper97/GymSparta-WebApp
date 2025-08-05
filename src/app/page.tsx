@@ -6,6 +6,7 @@ import Header from "@/components/organisms/Header"
 import Hero from "@/components/organisms/Hero"
 import About from "@/components/organisms/About"
 import RoutineSearch from "@/components/organisms/RoutineSearch"
+import CalorieCalculator from "@/components/organisms/CalorieCalculator"
 import Contact from "@/components/organisms/Contact"
 import Footer from "@/components/organisms/Footer"
 import TrainerPanel from "@/components/organisms/TrainerPanel"
@@ -37,6 +38,7 @@ export default function HomePage() {
           <Hero />
           <About />
           <RoutineSearch />
+          <CalorieCalculator />
           <Contact />
           <Footer />
         </>
