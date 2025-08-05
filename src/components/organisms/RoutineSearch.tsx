@@ -26,7 +26,7 @@ interface RoutineData {
 const mockRoutine = {
   "38803625": {
     name: "Rutina Ejemplo",
-    expiryDate: "2023-12-31",
+    expiryDate: "2025-12-31",
     routine: [
       { day: "Lunes", exercises: [{ name: "Sentadillas", sets: 3, reps: "10" }] },
       { day: "Martes", exercises: [{ name: "Press de Pecho", sets: 3, reps: "12" }] },
